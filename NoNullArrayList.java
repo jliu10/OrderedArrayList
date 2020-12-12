@@ -11,7 +11,8 @@ public class NoNullArrayList<T> extends ArrayList<T>{
   }
 
   public boolean add(T element){
-    return true;
+    if (element==null) throw new IllegalArgumentException("Element cannot be null");
+    return super.add(element);
   }
 
   public void add(int index, T element){
