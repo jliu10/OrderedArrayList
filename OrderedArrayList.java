@@ -1,11 +1,32 @@
 public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T>{
-  public NoNullArrayList(){
+  public OrderedArrayList(){
     super();
   }
 
-  public NoNullArrayList(int startingCapacity){
+  public OrderedArrayList(int startingCapacity){
     super(startingCapacity);
   }
 
-  
+  public boolean add(T element){
+    if (element==null) throw new IllegalArgumentException("Element cannot be null");
+    int index=0;
+    // for(int i=0;i<size();i++){
+    //   if(index.)
+    // }
+    super.add(index, element);
+    return true;
+  }
+
+  public void add(int index, T element){
+    add(element);
+  }
+
+  public T set(int index, T element){
+    if (element==null) throw new IllegalArgumentException("Element cannot be null");
+    T old=get(index);
+    remove(index);
+    add(element);
+    return old;
+  }
+
 }
