@@ -16,10 +16,13 @@ public class NoNullArrayList<T> extends ArrayList<T>{
   }
 
   public void add(int index, T element){
-
+    if (element==null) throw new IllegalArgumentException("Element cannot be null");
+    super.add(index, element);
   }
 
   public T set(int index, T element){
+    if (element==null) throw new IllegalArgumentException("Element cannot be null");
+
     return element;
   }
 
